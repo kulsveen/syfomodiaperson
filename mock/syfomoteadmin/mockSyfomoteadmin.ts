@@ -4,7 +4,7 @@ import { historikkmoterMock } from "../data/historikkmoterMock";
 import { ledereMock } from "../data/ledereMock";
 import { SYFOMOTEADMIN_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const mockOpprettetIdResultat = () => {
   mockOpprettetIdResultat.rollingCounter += 1;

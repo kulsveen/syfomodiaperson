@@ -1,7 +1,7 @@
 import { NAV_PERSONIDENT_HEADER } from "../util/requestUtil";
 import { SYFOBEHANDLENDEENHET_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const behandlendeEnhet = {
   enhetId: "0315",

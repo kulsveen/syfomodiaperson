@@ -1,5 +1,5 @@
 const express = require("express");
-let router = express.Router();
+export const router = express.Router();
 const { initialize, Strategy } = require("unleash-client");
 
 class ByEnhetAndEnvironment extends Strategy {
@@ -44,5 +44,3 @@ router.get("/dm2/", function (req, res) {
 
   res.status(200).send(isEnabled);
 });
-
-module.exports = router;

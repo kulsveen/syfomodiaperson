@@ -2,10 +2,10 @@ import { merge } from "webpack-merge";
 import mockEndepunkter from "./mock/mockEndepunkter";
 
 const express = require("express");
-const common = require("./webpack.common.ts");
+const common = require("./webpack.common");
 const path = require("path");
 
-const Auth = require("./server/auth/index.js");
+const Auth = require("./server/auth/index");
 
 module.exports = merge(common, {
   mode: "development",

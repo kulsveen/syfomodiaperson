@@ -6,7 +6,7 @@ import { SYFOOPPFOLGINGSPLANSERVICE_ROOT } from "../../src/apiConstants";
 
 const path = require("path");
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const dokumentinfo = { antallSider: 4 };
 

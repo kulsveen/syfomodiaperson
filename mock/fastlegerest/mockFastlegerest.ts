@@ -1,7 +1,7 @@
 import { fastlegerMock } from "./fastlegerMock";
 import { FASTLEGEREST_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 export const mockFastlegerest = (server) => {
   server.get(

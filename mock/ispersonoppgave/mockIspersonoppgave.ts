@@ -2,7 +2,7 @@ import { NAV_PERSONIDENT_HEADER } from "../util/requestUtil";
 import { leggTilDagerPaDato } from "../util/dateUtil";
 import { ISPERSONOPPGAVE_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const getDefaultPersonOppgaveUbehandlet = () => {
   const today = new Date();

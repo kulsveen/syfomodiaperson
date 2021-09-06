@@ -1,6 +1,6 @@
 import { ISPENGESTOPP_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const Status = {
   NORMAL: "NORMAL",

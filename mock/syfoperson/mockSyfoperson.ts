@@ -2,7 +2,7 @@ import { NAV_PERSONIDENT_HEADER } from "../util/requestUtil";
 import { personAdresseMock } from "../data/personAdresseMock";
 import { SYFOPERSON_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const diskresjonskode = "7";
 const isEgenAnsatt = true;

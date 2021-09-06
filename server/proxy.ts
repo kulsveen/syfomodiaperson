@@ -2,8 +2,8 @@ const express = require("express");
 const proxy = require("express-http-proxy");
 const url = require("url");
 
-const AuthUtils = require("./auth/utils.js");
-const Config = require("./config.js");
+const AuthUtils = require("./auth/utils");
+const Config = require("./config");
 
 const proxyExternalHost = (
   { applicationName, host, removePathPrefix },
@@ -108,7 +108,7 @@ const proxyOnBehalfOf = (req, res, next, authClient, externalAppConfig) => {
     });
 };
 
-const setup = (authClient) => {
+export const setup = (authClient) => {
   const router = express.Router();
 
   router.use("/isdialogmote/*", (req, res, next) => {
@@ -221,5 +221,3 @@ const setup = (authClient) => {
 
   return router;
 };
-
-module.exports = setup;

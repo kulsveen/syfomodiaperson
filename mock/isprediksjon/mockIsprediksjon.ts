@@ -2,7 +2,7 @@ import { NAV_PERSONIDENT_HEADER } from "../util/requestUtil";
 import { prediksjonMock } from "../data/prediksjonMock";
 import { ISPREDIKSJON_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 export const mockIsprediksjon = (server) => {
   server.get(

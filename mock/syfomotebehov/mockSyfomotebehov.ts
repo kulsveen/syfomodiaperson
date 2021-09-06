@@ -2,7 +2,7 @@ import { motebehovMock } from "../data/motebehovMock";
 import { SYFOMOTEBEHOV_ROOT } from "../../src/apiConstants";
 import { historikkmotebehovMock } from "../data/historikkmotebehovMock";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 export const mockSyfomotebehov = (server) => {
   server.get(

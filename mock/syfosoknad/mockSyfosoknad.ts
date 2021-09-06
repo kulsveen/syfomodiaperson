@@ -1,7 +1,7 @@
 import { soknaderMock } from "../data/soknaderMock";
 import { SYFOSOKNAD_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 export const mockSyfosoknad = (server) => {
   server.get(

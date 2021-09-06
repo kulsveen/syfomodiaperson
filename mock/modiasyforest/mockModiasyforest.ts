@@ -3,7 +3,7 @@ import { oppfolgingstilfelleperioderMock } from "../data/oppfolgingstilfelleperi
 import { brukerinfoMock } from "../data/brukerinfoMock";
 import { MODIASYFOREST_ROOT } from "../../src/apiConstants";
 
-const Auth = require("../../server/auth/index.js");
+const Auth = require("../../server/auth/index");
 
 const getOppfolgingstilfellerPerson = () => {
   return [

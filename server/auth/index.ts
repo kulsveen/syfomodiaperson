@@ -1,14 +1,16 @@
-const OpenIdClient = require("openid-client");
-const passport = require("passport");
+import * as Config from "../config";
 
-const session = require("../session.js");
-const AuthUtils = require("./utils.js");
-const Config = require("../config.js");
+import OpenIdClient from "openid-client";
+import passport from "passport";
 
-const dotenv = require("dotenv");
+import * as session from "../session";
+import * as AuthUtils from "./utils";
+import dotenv from "dotenv";
+import { User } from "@sentry/react";
+
 dotenv.config();
 
-const ensureAuthenticated = () => {
+export const ensureAuthenticated = () => {
   return async (req, res, next) => {
     if (req.isAuthenticated()) {
       return next();
@@ -58,7 +60,7 @@ const setupPassport = async (app, authClient) => {
   passport.serializeUser((user, done) => {
     done(null, user);
   });
-  passport.deserializeUser((user, done) => {
+  passport.deserializeUser((user: User, done) => {
     done(null, user);
   });
 
@@ -88,7 +90,7 @@ const setupPassport = async (app, authClient) => {
   });
 };
 
-const setupAuth = async (app) => {
+export const setupAuth = async (app) => {
   session.setupSession(app);
 
   const authClient = await AuthUtils.getOpenIdClient(Config.auth.discoverUrl);
@@ -96,9 +98,4 @@ const setupAuth = async (app) => {
   await setupPassport(app, authClient);
 
   return authClient;
-};
-
-module.exports = {
-  setupAuth: setupAuth,
-  ensureAuthenticated: ensureAuthenticated,
 };
