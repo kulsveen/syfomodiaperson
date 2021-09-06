@@ -9,4 +9,4 @@ COPY dist ./dist
 COPY server ./server
 
 EXPOSE 8080
-CMD ["node", ".dist/server.js"]
+CMD ["node", "."]
