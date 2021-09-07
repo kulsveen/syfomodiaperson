@@ -1,8 +1,10 @@
-const connectRedis = require("connect-redis");
-const session = require("express-session");
-const redis = require("redis");
+import * as Config from "./config";
 
-const Config = require("./config");
+import redis from "redis";
+
+import session from "express-session";
+
+import connectRedis from "connect-redis";
 
 const SESSION_MAX_AGE_MILLIS = 12 * 60 * 60 * 1000;
 

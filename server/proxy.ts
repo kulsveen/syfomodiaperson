@@ -1,9 +1,12 @@
-const express = require("express");
-const proxy = require("express-http-proxy");
-const url = require("url");
+import * as Config from "./config";
 
-const AuthUtils = require("./auth/utils");
-const Config = require("./config");
+import * as AuthUtils from "./auth/utils";
+
+import proxy from "express-http-proxy";
+
+import url from "url";
+
+import express from "express";
 
 const proxyExternalHost = (
   { applicationName, host, removePathPrefix },

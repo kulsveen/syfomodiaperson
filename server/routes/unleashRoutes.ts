@@ -1,6 +1,8 @@
-const express = require("express");
+import { initialize, Strategy } from "unleash-client";
+
+import express from "express";
+
 export const router = express.Router();
-const { initialize, Strategy } = require("unleash-client");
 
 class ByEnhetAndEnvironment extends Strategy {
   constructor() {
