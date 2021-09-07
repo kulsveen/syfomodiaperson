@@ -217,7 +217,7 @@ export const setup = (authClient) => {
             .status(503)
             .send({ message: `Could not contact internarbeidsflatedecorator` });
         }
-        next(err);
+        return next(err);
       },
     })
   );
