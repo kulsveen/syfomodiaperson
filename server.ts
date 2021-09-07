@@ -4,7 +4,7 @@ import unleashRoutes from "./server/routes/unleashRoutes";
 
 import * as Auth from "./server/auth";
 
-import express from "express";
+import * as express from "express";
 
 import path from "path";
 
