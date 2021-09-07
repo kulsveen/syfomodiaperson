@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const prometheus = require("prom-client");
 
-const Auth = require("./server/auth/index");
+const Auth = require("./server/auth");
 
 const setupProxy = require("./server/proxy");
 
@@ -76,3 +76,5 @@ const setupServer = async () => {
 };
 
 setupServer();
+
+export {};
