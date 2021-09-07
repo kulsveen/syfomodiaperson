@@ -4,7 +4,6 @@
   "description": "Digitalisering av sykefraværsoppfølging",
   "main": "index.js",
   "test": "npm run test",
-  "server": "ts-node --transpile-only server.ts",
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md,less,html}": [
       "prettier --write"
