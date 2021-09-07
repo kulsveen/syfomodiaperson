@@ -6,7 +6,7 @@ import proxy from "express-http-proxy";
 
 import url from "url";
 
-import express from "express";
+import * as express from "express";
 
 const proxyExternalHost = (
   { applicationName, host, removePathPrefix },
@@ -28,7 +28,7 @@ const proxyExternalHost = (
         if (!reqUser) {
           return options;
         }
-        const selfAccessToken = reqUser.tokenSets.self.access_token;
+        const selfAccessToken = reqUser["tokenSets"].self.access_token;
         options.headers["Authorization"] = `Bearer ${selfAccessToken}`;
         options.headers["Cookie"] = `isso-accesstoken=${accessToken}`;
       } else {
@@ -65,7 +65,7 @@ const proxyExternalHost = (
         console.log("proxyErrorHandler: Got ECONNREFUSED");
         return res.status(503).send({ message: `Could not contact ${host}` });
       }
-      next(err);
+      return next(err);
     },
   });
 

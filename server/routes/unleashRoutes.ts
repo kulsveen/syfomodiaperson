@@ -1,6 +1,6 @@
 import { initialize, Strategy } from "unleash-client";
 
-import express from "express";
+import * as express from "express";
 
 export const router = express.Router();
 
@@ -39,9 +39,12 @@ const unleash = initialize({
 });
 
 export default router.get("/dm2/", function (req, res) {
+  const enhetNr = req.query.valgtEnhet?.toString();
+  const userId = req.query.userId?.toString();
+
   const isEnabled = unleash.isEnabled("syfo.syfomodiaperson.dm2", {
-    valgtEnhet: req.query.valgtEnhet,
-    user: req.query.userId,
+    valgtEnhet: enhetNr,
+    user: userId,
   });
 
   res.status(200).send(isEnabled);
