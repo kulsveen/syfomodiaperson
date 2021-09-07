@@ -9,4 +9,4 @@ COPY dist ./dist
 COPY server ./server
 
 EXPOSE 8080
-CMD ["esno", "server.ts"]
+CMD ["ts-node", "--transpile-only", "server.ts"]
