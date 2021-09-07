@@ -1,11 +1,12 @@
+import { setup as setupProxy } from "./server/proxy";
+
+import unleashRoutes from "./server/routes/unleashRoutes";
+
 const express = require("express");
 const path = require("path");
 const prometheus = require("prom-client");
 
 const Auth = require("./server/auth");
-
-const setupProxy = require("./server/proxy");
-
 // Prometheus metrics
 const collectDefaultMetrics = prometheus.collectDefaultMetrics;
 collectDefaultMetrics({ timeout: 5000 });
@@ -37,8 +38,6 @@ const setupServer = async () => {
   const HTML_FILE = path.join(DIST_DIR, "index.html");
 
   server.use("/static", express.static(DIST_DIR));
-
-  const unleashRoutes = require("./server/routes/unleashRoutes");
   server.use("/isenabled", unleashRoutes);
 
   server.get(

@@ -36,7 +36,7 @@ const unleash = initialize({
   strategies: [new ByEnhetAndEnvironment(), new ByUserId()],
 });
 
-router.get("/dm2/", function (req, res) {
+export default router.get("/dm2/", function (req, res) {
   const isEnabled = unleash.isEnabled("syfo.syfomodiaperson.dm2", {
     valgtEnhet: req.query.valgtEnhet,
     user: req.query.userId,
