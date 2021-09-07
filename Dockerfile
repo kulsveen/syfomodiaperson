@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM navikt/node-express:14-alpine
 WORKDIR /syfomodiaperson
 
 COPY server.ts package.json ./
