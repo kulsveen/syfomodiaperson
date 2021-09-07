@@ -76,5 +76,3 @@ const setupServer = async () => {
 };
 
 setupServer();
-
-export {};
