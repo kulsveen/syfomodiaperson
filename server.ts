@@ -2,11 +2,13 @@ import { setup as setupProxy } from "./server/proxy";
 
 import unleashRoutes from "./server/routes/unleashRoutes";
 
-const express = require("express");
-const path = require("path");
-const prometheus = require("prom-client");
+import * as Auth from "./server/auth";
 
-const Auth = require("./server/auth");
+import express from "express";
+
+import path from "path";
+
+import prometheus from "prom-client";
 // Prometheus metrics
 const collectDefaultMetrics = prometheus.collectDefaultMetrics;
 collectDefaultMetrics({ timeout: 5000 });
