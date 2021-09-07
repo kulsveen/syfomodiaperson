@@ -1,6 +1,6 @@
 import { initialize, Strategy } from "unleash-client";
 
-import * as express from "express";
+import express from "express";
 
 export const router = express.Router();
 
