@@ -34,7 +34,6 @@ export const setupSession = (app) => {
     session({
       cookie: {
         maxAge: SESSION_MAX_AGE_MILLIS,
-        sameSite: "lax",
         httpOnly: true,
         secure: Config.isProd,
       },
