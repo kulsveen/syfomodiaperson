@@ -1,4 +1,4 @@
-import createHttpsProxyAgent from "https-proxy-agent";
+import HttpsProxyAgent from "https-proxy-agent";
 import * as Config from "../config";
 import OpenIdClient from "openid-client";
 
@@ -119,7 +119,9 @@ const requestOnBehalfOfToken = async (
 export const getOpenIdClient = async (issuerUrl) => {
   try {
     if (Config.server.proxy) {
-      const proxyAgent = createHttpsProxyAgent(Config.server.proxy);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const proxyAgent = new HttpsProxyAgent(Config.server.proxy);
       OpenIdClient.custom.setHttpOptionsDefaults({
         agent: {
           http: proxyAgent,
