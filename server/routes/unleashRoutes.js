@@ -37,11 +37,29 @@ class ByUserId extends Strategy {
   }
 }
 
+class GradualRolloutUserId extends Strategy {
+  constructor() {
+    super("gradualRolloutUserId");
+  }
+
+  isEnabled(parameters, context) {
+    if (!context.user) {
+      return false;
+    }
+
+    return parameters.user.indexOf(context.user) !== -1;
+  }
+}
+
 const unleash = initialize({
   url: "https://unleash.nais.io/api/",
   appName: "syfomodiaperson",
   environment: process.env.NAIS_CONTEXT,
-  strategies: [new ByEnhetAndEnvironment(), new ByUserId()],
+  strategies: [
+    new ByEnhetAndEnvironment(),
+    new ByUserId(),
+    new GradualRolloutUserId(),
+  ],
 });
 
 router.post("/toggles", (req, res) => {
